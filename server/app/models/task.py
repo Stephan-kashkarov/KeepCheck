@@ -19,7 +19,7 @@ class Task(BaseModel, db.Model):
 	__tablename__ = "task"
 
 	id =            db.Column(db.Integer, primary_key=True)
-	creator =       db.Column(db.Integer, db.ForeignKey('person.id'))
+	creator =       db.Column(db.Integer, db.ForeignKey('person.id'), nullable=False)
 	title =         db.Column(db.String(64))
 	descript =      db.Column(db.String((255)))
 	done =          db.Column(db.Boolean)
@@ -27,5 +27,5 @@ class Task(BaseModel, db.Model):
 	finished =      db.Column(db.DateTime, nullable=True)
 	deadline =      db.Column(db.DateTime, nullable=True)
 
-	dependencies =  db.relationship("Dependencies", secondary=dependencies, lazy="subquery", backref=db.backref("task", lazy=True))
-	assigned =      db.relationship('Assigned', secondary=assigned, lazy="subquery", backref=db.backref("task", lazy=True))
+	dependencies =  db.relationship("dependencies", secondary=dependencies, lazy="subquery", backref=db.backref("task", lazy=True))
+	assigned =      db.relationship('assigned', secondary=assigned,   lazy="subquery", backref=db.backref("task", lazy=True))

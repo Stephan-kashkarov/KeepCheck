@@ -1,5 +1,7 @@
 from app import create_app, db
-from app.models import base, list, user, task
+from app.models.user import Person
+from app.models.list import List, owners, sublists
+from app.models.task import Task, dependencies, assigned
 
 app = create_app()
 
@@ -7,7 +9,10 @@ app = create_app()
 def make_shell_context():
 	return {
 		'db': db,
-		'User': user,
-		"list": list,
-		"task": task
+		'Person': Person,
+		"List": List,
+		"Task": Task,
+		"owners": owners,
+		"dependencies": dependencies,
+		"assigned": assigned
 	}

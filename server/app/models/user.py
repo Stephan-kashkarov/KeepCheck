@@ -15,7 +15,8 @@ class Person(BaseModel, UserMixin, db.Model):
 	bio =       db.Column(db.String(255))
 	joined =    db.Column(db.DateTime, default=datetime.utcnow)
 	last_seen = db.Column(db.DateTime, default=datetime.utcnow)
-	creator =   db.relationship("Creator", backref="person", lazy=True)
+
+	creator =   db.relationship("list", backref="person", lazy=True)
 
 	def setPass(self, password):
 		self.pass_hash = generate_password_hash(str(password))
