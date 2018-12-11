@@ -28,5 +28,5 @@ class List(BaseModel, db.Model):
 
     owners = db.relationship(
         'Owners', lazy="subquery", backref=db.backref("List", lazy=True))
-    sublists = db.relationship(
-        'Sublists', lazy="subquery", backref=db.backref("List", lazy=True))
+    # sublists = db.relationship(
+    #     'Sublists', lazy="subquery", backref=db.backref("List", lazy=True))

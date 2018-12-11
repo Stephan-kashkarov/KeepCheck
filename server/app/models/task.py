@@ -30,9 +30,6 @@ class Task(BaseModel, db.Model):
     finished = db.Column(db.DateTime, nullable=True)
     deadline = db.Column(db.DateTime, nullable=True)
 
-    dependencies = db.relationship(
-        "Dependencies", secondary=Dependencies,
-        lazy="subquery", backref=db.backref("task", lazy=True))
     assigned = db.relationship(
-        'Assigned', secondary=Assigned,
+        'Assigned',
         lazy="subquery", backref=db.backref("task", lazy=True))
