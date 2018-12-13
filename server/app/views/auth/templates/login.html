@@ -1,0 +1,14 @@
+{% extends '../../main.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="url_for('.static', filename='css/mainAuth.css')">
+<link rel="stylesheet" href="url_for('.static', filename='css/login.css')">
+{% endblock %}
+
+{% block scripts %}
+<script src="{{url_for('.static', filename='/js/auth.js')}}"></script>
+<script src="{{url_for('.static', filename='/js/login.js')}}"></script>
+{% endblock %}
+
+{% block body %}
+{% endblock %}

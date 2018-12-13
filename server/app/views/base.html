@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>KeepCheck - {{page}}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link
+		rel="stylesheet"
+		type="text/css" 
+		href="{{url_for('.static', filename='../../static/css/base.css')}}"
+	>
+	<link
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		rel="stylesheet"
+	>
+	{% block styles %}
+	{% endblock %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script src="{{url_for('.static', filename='../../static/js/base.js')}}"></script>
+	{% block scripts %}
+	{% endblock %}
+</head>
+<body>
+	{% block navbar %}
+	{% endblock %}
+	{% block body %}
+	{% endblock %}
+	{% block footer %}
+	{% endblock %}
+</body>
+</html>
